@@ -15,6 +15,7 @@ const users=require('./models/users');
 const reviews=require('./models/reviews');
 const User=require('./models/loginuser');
 
+//mongodb+srv://OUR-FIRST-USER:<password>@cluster0.gx0v5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 const description=require('./seeds/description');
 const { string } = require("joi");
@@ -27,11 +28,14 @@ const Diet=require('./Routes/Diet')
 const excercise=require('./Routes/excercise')
 const nutritionFacts=require('./Routes/nutritionFacts')
 const userRoutes=require('./routes/loginusers')
+const MongoDBStore = require("connect-mongo")(session);
+
+const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/fitness';
+
+mongoose.connect(dbUrl,{useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology:true, useFindAndModify: false})
 
 
 const app=express();
-mongoose.connect('mongodb://localhost:27017/fitness',{useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology:true, useFindAndModify: false})
-
 app.engine('ejs', ejsmate)
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, 'views'))
@@ -41,9 +45,23 @@ app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname,'./public')))
 app.use('/images',express.static('./images'))
 
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+
+const store = new MongoDBStore({
+    url: dbUrl,
+    secret,
+    touchAfter: 24 * 60 * 60
+});
+
+
+store.on("error", function (e){
+  console.log("session store error",e)
+}) 
 
 const sessionConfig={
-  secret:'this is a secret session',
+  store,
+  name:'session',
+  secret,
   resave:false,
   saveUninitialized:true,
   cookie:{
