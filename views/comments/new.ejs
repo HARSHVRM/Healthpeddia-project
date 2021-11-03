@@ -1,0 +1,29 @@
+
+  <% layout('layouts/boilerplate') %>
+
+    <form action='/comments' method="POST" class="validated-form" novalidate>
+       <div>
+        <label for="username">Enter username</label>
+        <input type="text" id="username" placeholder="enter your username" name="comments[username]" required>
+       </div>
+    
+       <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="enter your title" name="comments[title]" required>    
+      </div>
+
+      <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="enter your location" name="comments[location]" required>    
+      </div>
+
+      <div>
+        <label for="comment">Enter your comments</label>
+        <input type="text" id="comment" placeholder="enter your comments" name="comments[comments]" required>    
+      </div>
+
+       <button>Add new comment</button>
+
+    </form>
+
+    <a href="/comments">Back to all comments</a>

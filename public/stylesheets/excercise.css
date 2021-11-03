@@ -1,0 +1,127 @@
+.card{
+   width: 400px;
+   height: 120px;
+   top: 50%;
+   left: 50%;
+   margin-left: -150px;
+   margin-top: 10px;
+   background-color: #ff8c00;
+   text-align:center;
+   border-radius: 25px;
+}
+
+.card-body:hover{
+   background-color: yellow; 
+   box-shadow: rgb(246, 245, 247);
+   transform: translateX(0.25em);
+   border-radius: 25px;
+}
+
+#link{
+   margin-left: 150px;
+}
+
+#program{
+   color:black;
+   text-decoration: underline;
+   font-family: sans-serif;
+   text-align:center;
+   font-weight: bold;
+}
+
+#split{
+   color:white;
+   text-decoration: underline;
+   font-family: cursive;
+   text-align:left;
+   font-weight: bold;
+}
+
+.table{
+   color:white;
+   border:1px solid;
+   text-align:center;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
+   font-size: large;
+   font-weight: bold;
+}
+
+
+#second{
+   width:80em;
+   height:40em;
+   background-color: rgb(136, 124, 124);
+}
+
+#monday{
+   font-family: cursive;
+   text-align:center;
+   font-weight: bold;
+   font-size: 30px;
+}
+
+
+
+#superset{
+  text-align: left;
+}
+#regularset{
+   text-align:left;
+}
+
+#f{
+   background-color: rgba(255, 115, 0, 0.747);
+   text-decoration: underline;
+   font-family: italic;
+   font-weight: bolder;
+   font-size: large;
+}
+
+#a{
+   text-decoration: underline;
+   background-color: rgba(255, 115, 0, 0.747);
+}
+
+#b{
+   text-decoration: underline;
+   background-color: black;
+}
+
+.background-image
+{
+    height:100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/liftandpress.png");
+    background-size:cover;
+    background-position: center;
+}
+
+#firstColor
+{
+    height:100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/workoutSplit.jpg");
+    background-size:cover;
+    background-position: center;
+    width:800px;
+    height:50px;
+}
+
+#firstColor:hover{
+   height:100vh;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+   url("/images/workout.jpg");
+   background-size:cover;
+   background-position: center;
+   width:800px;
+   height:50px;
+}
+
+.button{
+   text-align: center;
+}
+
+footer{
+   text-align: center;
+}

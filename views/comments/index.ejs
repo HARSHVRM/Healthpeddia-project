@@ -1,0 +1,14 @@
+
+    <% layout('layouts/boilerplate') %>
+
+    <h1>Comments</h1>
+    <div>
+        <a href="/comments/new">To add new comments</a>
+    </div>
+    <ul>
+
+   <% for(let u of user)
+   { %>
+    <li><a href="/comments/<%= u._id %>"><%=u.username%>-<%= u.title %></a></li>
+   <% } %>
+    </ul>

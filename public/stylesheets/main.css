@@ -1,0 +1,117 @@
+
+.N:hover{
+    transform: translateX(2px);
+    background-color: black;
+    color:rgb(235, 229, 229);
+    transition:0.5s;
+}
+
+.F:hover{
+    transform: translateX(2px);
+    background-color: black;
+    color:rgb(235, 229, 229);
+    transition:0.5s;
+}
+
+.E:hover{
+    transform: translateX(2px);
+    background-color: black;
+    color:rgb(235, 229, 229);
+    transition:0.5s;
+}
+
+.D:hover{
+    transform: translateX(2px);
+    background-color: black;
+    color:rgb(235, 229, 229);
+    transition:0.5s;
+}
+
+.nF:hover{
+    transform: translateX(2px);
+    background-color: black;
+    color:rgb(235, 229, 229);
+    transition:0.5s;
+}
+
+#upper{
+    text-align: center;
+    margin: 30px;;
+    padding:1.9em ;
+    font-family: cursive;
+}  
+
+#upper:hover{
+    transform: translateY(-0.25em);
+}
+
+#flat{
+    text-align: center;
+    margin:30px;
+    padding:1.9em;
+    font-family: cursive;
+}
+
+#flat:hover{
+    transform:translateY(-0.25em);
+}
+
+
+#lower{
+    text-align: center;
+    margin:30px;
+    padding:1.9em;
+    font-family: cursive;
+}
+
+#lower:hover{
+    transform: translateY(-0.25em);
+}
+
+#lat{
+    text-align: center;
+    margin:20px;
+    padding:1em;
+    font-family: cursive;
+}
+
+#lat:hover{
+    transform: translateX(-0.25em);
+}
+
+#smith{
+    text-align: center;
+    margin:30px;
+    padding:1.9em;
+    font-family: cursive;
+    border:5px solid #fcfcfc;
+}
+
+#smith:hover{
+    transform: translateY(0.25em);
+}
+
+#legpress{
+    text-align: center;
+    margin:30px;
+    padding:1.9em;
+    font-family: cursive;
+    border:5px solid #fcfcfc;
+}
+
+#legpress:hover{
+    transform: translateY(0.25em);
+}
+
+#cable-cross{
+    text-align: center;
+    margin:30px;
+    padding:1.9em;
+    font-family: cursive;
+    border:5px solid #fcfcfc;
+}
+
+
+footer{
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+body
+{ 
+    height:100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/fitness.jpg");
+    background-size:cover;
+    background-position: center;
+}
+
+.nav-link{
+    color:whitesmoke;
+    border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover{
+    color:rgba(255, 255, 255, 0.637);
+    border-bottom: 0.20rem solid white;
+}
+
+.front{
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    text-decoration: underline;
+}
+
