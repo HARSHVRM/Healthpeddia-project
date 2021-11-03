@@ -1,3 +1,8 @@
+if(process.env.NODE_ENV !== "production")
+{
+    require('dotenv').config();
+}
+
 const express=require("express");
 const path=require('path');
 const {v4:uuid}=require('uuid');
@@ -32,7 +37,7 @@ const MongoDBStore = require("connect-mongo")(session);
 
 const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/fitness';
 
-mongoose.connect("mongodb+srv:OUR-FIRST-USER:1998@3harsh522@@1998@cluster0.gx0v5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology:true, useFindAndModify: false})
+mongoose.connect(dbUrl,{useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology:true, useFindAndModify: false})
 
 
 const app=express();
