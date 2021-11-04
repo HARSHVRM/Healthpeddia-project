@@ -34,7 +34,7 @@ const main=require('./Routes/main')
 const Diet=require('./Routes/Diet')
 const excercise=require('./Routes/excercise')
 const nutritionFacts=require('./Routes/nutritionFacts')
-const userRoutes=require('./routes/loginusers')
+const userRoutes=require('./Routes/loginusers')
 const MongoDBStore = require("connect-mongo")(session);
 
 const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/fitness';
