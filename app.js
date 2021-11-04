@@ -3,6 +3,8 @@
     require('dotenv').config();
 } */
 
+require('dotenv').config();
+
 const express=require("express");
 const path=require('path');
 const {v4:uuid}=require('uuid');
@@ -35,10 +37,9 @@ const nutritionFacts=require('./Routes/nutritionFacts')
 const userRoutes=require('./routes/loginusers')
 const MongoDBStore = require("connect-mongo")(session);
 
-/* const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/fitness'; */
+const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/fitness';
 
-mongoose.connect("mongodb+srv:OUR-FIRST-USER:hARSHvRM@1998@cluster0.gx0v5.mongodb.net/fitness?retryWrites=true&w=majority",{useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology:true, useFindAndModify: false})
-
+mongoose.connect(dbUrl,{useNewUrlParser:true, useCreateIndex: true, useUnifiedTopology:true, useFindAndModify: false})
 
 const app=express();
 app.engine('ejs', ejsmate)
@@ -50,7 +51,7 @@ app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname,'./public')))
 app.use('/images',express.static('./images'))
 
-/* const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
 const store = new MongoDBStore({
     url: dbUrl,
@@ -62,7 +63,7 @@ const store = new MongoDBStore({
 store.on("error", function (e){
   console.log("session store error",e)
 }) 
- */
+
 const sessionConfig={
   store,
   name:'session',
@@ -125,8 +126,8 @@ app.use((err,req,res,next)=>{
   res.status(statusCode).render('error',{err});                     
 })
 
-/* const port=process.env.PORT || 5000 ; */
-app.listen(process.env.PORT , process.env.IP, function(){
-    console.log('server started');
+const port=process.env.PORT || 5000 ;
+app.listen(port , ()=>{
+    console.log(`server started on port ${port}`);
 })
 
